@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/panacloud/Desktop/Temp GeoFence/Geofence/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="/Users/panacloud/Desktop/Temp GeoFence/Geofence/app/build/intermediates/pre-dexed/debug/classes-864dc0b39c00ec1e32d0818f67ad8bba5532b779.jar" />
+    </item>
+    <item
+        jar="/Users/panacloud/Desktop/Temp GeoFence/Geofence/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/4.2.42/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e5f81129dfb3d02df80126512bc98278ed2bb40a">
+        <dex dex="/Users/panacloud/Desktop/Temp GeoFence/Geofence/app/build/intermediates/pre-dexed/debug/classes-41ad923a1f773393c1acd2e5b647e6e6ee7e1107.jar" />
+    </item>
+    <item
+        jar="/Users/panacloud/Desktop/Temp GeoFence/Geofence/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/libs/internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="/Users/panacloud/Desktop/Temp GeoFence/Geofence/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-e6edc434b0f00d8c8017893ad3271237d678d795.jar" />
+    </item>
+    <item
+        jar="/Users/panacloud/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="/Users/panacloud/Desktop/Temp GeoFence/Geofence/app/build/intermediates/pre-dexed/debug/support-annotations-22.0.0-0c9f3292f87b4c0078f8a3de8101cd0df6bbd92a.jar" />
+    </item>
+    <item
+        jar="/Users/panacloud/Desktop/Temp GeoFence/Geofence/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
+        <dex dex="/Users/panacloud/Desktop/Temp GeoFence/Geofence/app/build/intermediates/pre-dexed/debug/classes-75efabbc0cfb8f4abb10fcd4422b8baed85d7532.jar" />
+    </item>
+
+</items>

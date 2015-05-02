@@ -1,0 +1,33 @@
+
+        Log.v("Muzammil", "MS, Received start id " + startId + ": " + intent);
+        // We want this service to continue running until it is explicitly
+
+//        Log.v("Muzammil", "MS, "+ intent.getStringExtra("intentTest"));
+
+        Toast.makeText(this, "MS, Transition occur..", Toast.LENGTH_LONG).show();
+
+        if (!LocationClient.hasError(intent)) {
+            int transition = LocationClient.getGeofenceTransition(intent);
+            Log.v("Muzammil", "MS, Transition Occur: "+ transition);
+
+
+            // Post a notification
+            List<Geofence> geofences = LocationClient.getTriggeringGeofences(intent);
+            String[] geofenceIds = new String[geofences.size()];
+
+            Log.v("GeofenceIds Size: ", "" + geofences.size());
+            for (int index = 0; index < geofences.size(); index++) {
+                geofenceIds[index] = geofences.get(index).getRequestId();
+                Log.v("GeofenceIds", "" + geofenceIds[index]);
+
+            }
+            String ids = TextUtils.join(", ", geofenceIds);
+            String transitionType = getTransitionString(transition);
+
+            sendNotification(transitionType, ids);
+        } else {
+            Log.e("Muzammil", String.valueOf(LocationClient.getErrorCode(intent)));
+        }
+        // stopped, so return sticky.
+
+        return START_STICKY;

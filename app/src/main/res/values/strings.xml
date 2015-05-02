@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Geofence</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="geofence_transition_notification_title">
+        GeoFence:-Action: %1$s, Place: %2$s
+    </string>
+    <string name="geofence_transition_notification_text">
+        Click notification to return to app
+    </string>
+
+    <string name="geofence_transition_unknown">Unknown transition</string>
+    <string name="geofence_transition_entered">Entered</string>
+    <string name="geofence_transition_exited">Exited</string>
+    <string name="geofence_transition_dwell">Dwelling</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_add_fence">AddFenceActivity</string>
+    <string name="addButtonText">Add Fence</string>
+</resources>

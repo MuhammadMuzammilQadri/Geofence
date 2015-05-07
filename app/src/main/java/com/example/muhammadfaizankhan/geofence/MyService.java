@@ -36,6 +36,9 @@ public class MyService extends Service {
     @Override
     public void onCreate() {
 
+        Log.v("Muzammil", "MS,Service Created..");
+
+
     }
 
     @Override

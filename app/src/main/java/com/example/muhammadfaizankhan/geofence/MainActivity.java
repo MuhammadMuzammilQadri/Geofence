@@ -104,10 +104,18 @@ public class MainActivity extends FragmentActivity
         mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
         mLocationRequest.setInterval(3600000);
         mLocationRequest.setFastestInterval(60000);
+
+
     }
 
     @Override
     public void onConnected(Bundle bundle) {
+
+
+        PendingIntent pendingIntent = PendingIntent.getService(this, 0,
+                new Intent(this, MyService.class)
+                , PendingIntent.FLAG_UPDATE_CURRENT);
+
 
         Log.v("GEOFENCE", "Connected to location services.");
         if (isFirstTime) {
@@ -144,9 +152,7 @@ public class MainActivity extends FragmentActivity
              * We're creating a PendingIntent that references the ReceiveTransitionsIntentService class
              * in conjunction with the geofences.
              */
-            PendingIntent pendingIntent = PendingIntent.getService(this, 0,
-                    new Intent(this, MyService.class)
-                    , PendingIntent.FLAG_UPDATE_CURRENT);
+
 
 
             /**
@@ -165,6 +171,7 @@ public class MainActivity extends FragmentActivity
                 String x = geofences.get(index).getRequestId();
                 Log.v("MainGeofenceIds", "" + x);
             }
+
 
             mLocationClient.addGeofences(geofences, pendingIntent, this);
 
@@ -235,12 +242,17 @@ public class MainActivity extends FragmentActivity
 
     protected void onStop() {
         // Disconnect from the location APIs.
-        mLocationClient.disconnect();
+//        mLocationClient.disconnect();
         super.onStop();
     }
 
-
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (null != mLocationClient) {
+            mLocationClient.disconnect();
+        }
+    }
 
     @Override
     protected void onResume() {

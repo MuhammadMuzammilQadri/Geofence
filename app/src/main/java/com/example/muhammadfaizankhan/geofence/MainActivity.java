@@ -16,12 +16,16 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GooglePlayServicesClient;
+//import com.google.android.gms.common.GooglePlayServicesClient;
 import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.Geofence;
-import com.google.android.gms.location.LocationClient;
+//import com.google.android.gms.location.LocationClient;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.LocationStatusCodes;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -33,12 +37,10 @@ import com.google.android.gms.maps.model.LatLng;
 import java.util.ArrayList;
 
 public class MainActivity extends FragmentActivity
-        implements GooglePlayServicesClient.ConnectionCallbacks,
-        GooglePlayServicesClient.OnConnectionFailedListener,
-        LocationListener,
-        LocationClient.OnAddGeofencesResultListener{
+        implements
+        LocationListener{
 
-    private final static String TAG = "MainActivity";
+    private final static String TAG = "Muzammil";
     final static int DWELL_PERIOD=10000;
     /**
      * Google Map object
@@ -62,7 +64,9 @@ public class MainActivity extends FragmentActivity
     /**
      * Entry point for Google's location related APIs.
      */
-    static LocationClient mLocationClient;
+
+//  TODO  static LocationClient mLocationClient;
+            static GoogleApiClient mGoogleApiClient;
     static Location myLastLocation;
     static double myLastLocationRadius;
     static boolean isFenceAdded;
@@ -86,6 +90,9 @@ public class MainActivity extends FragmentActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Log.v("Muzammil", "MA, in onCreate..");
+
+
         /**
          * We create a new LocationClient which is used as an entry point for Google's location
          * related APIs. The first parameter is the context, the second is
@@ -93,12 +100,36 @@ public class MainActivity extends FragmentActivity
          * GooglePlayServicesClient.OnConnectionFailedListener. Since we implemented both listeners
          * on the MainActivity class, we pass 'this' for the second and third parameters.
          */
-        mLocationClient = new LocationClient(this, this, this);
+//        mLocationClient = new LocationClient(this, this, this);   TODO
+
+        mGoogleApiClient = new GoogleApiClient.Builder(this)
+                .addApi(LocationServices.API)
+                .addConnectionCallbacks(new GoogleApiClient.ConnectionCallbacks(){
+                    @Override
+                    public void onConnected(Bundle bundle) {
+                        functionForOnConnected(bundle);
+                    }
+
+                    @Override
+                    public void onConnectionSuspended(int i) {
+                        Log.v("Muzammil", "Connection to GoogleAPIClient failed!");
+                    }
+                })
+                .addOnConnectionFailedListener(new GoogleApiClient.OnConnectionFailedListener() {
+                    @Override
+                    public void onConnectionFailed(ConnectionResult connectionResult) {
+                        Log.v("Muzammil", "Connection to GoogleAPIClient failed!");
+
+                    }
+                })
+                .build();
 
         /**
          * With the LocationRequest, we can set the quality of service. For example, the priority
          * and intervals.
          */
+
+
 
         mLocationRequest = LocationRequest.create();
         mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
@@ -108,16 +139,18 @@ public class MainActivity extends FragmentActivity
 
     }
 
-    @Override
-    public void onConnected(Bundle bundle) {
+    public void functionForOnConnected(Bundle bundle) {
 
+        Log.v("Muzammil", "Connected to location services.");
 
+        Log.v("Muzammil", "Calling Service..");
         PendingIntent pendingIntent = PendingIntent.getService(this, 0,
                 new Intent(this, MyService.class)
                 , PendingIntent.FLAG_UPDATE_CURRENT);
+        Log.v("Muzammil", "Service Called..");
 
 
-        Log.v("GEOFENCE", "Connected to location services.");
+
         if (isFirstTime) {
             /**
              * The addGeofences function requires that the Geofences be in a List, so there can be
@@ -130,7 +163,7 @@ public class MainActivity extends FragmentActivity
                             // Set the geofence location and radius.
                     .setCircularRegion(mGeofenceLatLng.latitude, mGeofenceLatLng.longitude, mRadius)
                             // How long the geofence will remain in place.
-                    .setExpirationDuration(100000*60*20)
+                    .setExpirationDuration(1000*60*7)
                             // This is required if you specify GEOFENCE_TRANSITION_DWELL when setting the transition types.
                     .setLoiteringDelay(DWELL_PERIOD)
                     .build();
@@ -158,7 +191,6 @@ public class MainActivity extends FragmentActivity
             /**
              * We want this (MainActivity) to handle location updates.(see onLocationChanged function)
              */
-            mLocationClient.requestLocationUpdates(mLocationRequest, this);
             /**
              * Adding the Geofences and PendingIntent to the LocationClient and setting this
              * (MainActivity) to handle onAddGeofencesResult. The pending intent, which is the
@@ -173,21 +205,51 @@ public class MainActivity extends FragmentActivity
             }
 
 
-            mLocationClient.addGeofences(geofences, pendingIntent, this);
+//            mLocationClient.addGeofences(geofences, pendingIntent, this); TODO
+
+            //TODO
+            //We can also call just an await() function instead of setResultCallback()..
 
             isFenceAdded=false;
 
         }
+
+        LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);
+        LocationServices.GeofencingApi.addGeofences(mGoogleApiClient, geofences, pendingIntent)
+                .setResultCallback(new ResultCallback<Status>() {
+                    @Override
+                    public void onResult(Status status) {
+                        Log.v("Muzammil","addGeofences ResultCallBack"+status.getStatusMessage());
+                    }
+                });
+
         Log.v("GeofenceIds Size: ", "" + geofences.size());
 //        Log.v("GEOFENCE", MainActivity.mGeofence.toString());
 
 
     }
 
-    @Override
-    public void onDisconnected() {
-        Log.v("GEOFENCE", "Disconnected");
-    }
+//
+//    @Override
+//    public void onAddGeofencesResult(int statusCode, String[] geofenceRequestIds) {
+//        switch (statusCode) {
+//            case LocationStatusCodes.SUCCESS:
+//                Log.v(TAG, "Successfully added Geofence.");
+//                setUpMap();
+//                break;
+//            case LocationStatusCodes.ERROR:
+//                Log.v(TAG, "Error adding Geofence.");
+//                break;
+//            case LocationStatusCodes.GEOFENCE_TOO_MANY_GEOFENCES:
+//                Log.v(TAG, "Too many geofences.");
+//                break;
+//            case LocationStatusCodes.GEOFENCE_TOO_MANY_PENDING_INTENTS:
+//                Log.v(TAG, "Too many pending intents.");
+//                break;
+//        }
+//    }
+
+
 
     @Override
     public void onLocationChanged(Location location) {
@@ -195,30 +257,6 @@ public class MainActivity extends FragmentActivity
          * Location data is passed back to this function.
          */
         Log.v("Location Changed", "Location Changed: " + location.getLatitude() + ", " + location.getLongitude());
-    }
-
-    @Override
-    public void onConnectionFailed(ConnectionResult connectionResult) {
-        Log.v("GEOFENCE", "Connection to LocationClient failed!");
-    }
-
-    @Override
-    public void onAddGeofencesResult(int statusCode, String[] geofenceRequestIds) {
-        switch (statusCode) {
-            case LocationStatusCodes.SUCCESS:
-                Log.v(TAG, "Successfully added Geofence.");
-                setUpMap();
-                break;
-            case LocationStatusCodes.ERROR:
-                Log.v(TAG, "Error adding Geofence.");
-                break;
-            case LocationStatusCodes.GEOFENCE_TOO_MANY_GEOFENCES:
-                Log.v(TAG, "Too many geofences.");
-                break;
-            case LocationStatusCodes.GEOFENCE_TOO_MANY_PENDING_INTENTS:
-                Log.v(TAG, "Too many pending intents.");
-                break;
-        }
     }
 
 //    @Override
@@ -234,14 +272,19 @@ public class MainActivity extends FragmentActivity
     @Override
     protected void onStart() {
         super.onStart();
+
+        Log.v("Muzammil", "MA, in onStart()");
+//        startService(new Intent(this, MyService.class));
+
         // Connect to the location APIs.
-        mLocationClient.connect();
+        mGoogleApiClient.connect();
 //        startService(new Intent(this, ReceiveTransitionsIntentService.class));
 //        startService(new Intent(getBaseContext(), ReceiveTransitionsIntentService.class));
     }
 
     protected void onStop() {
         // Disconnect from the location APIs.
+        Log.v("Muzammil", "MA, in onStop()");
 //        mLocationClient.disconnect();
         super.onStop();
     }
@@ -249,14 +292,18 @@ public class MainActivity extends FragmentActivity
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (null != mLocationClient) {
-            mLocationClient.disconnect();
+        if (null != mGoogleApiClient) {
+            mGoogleApiClient.disconnect();
         }
     }
+
 
     @Override
     protected void onResume() {
         super.onResume();
+
+        Log.v("Muzammil", "MA, in onResume()");
+
         if (GooglePlayServicesUtil.isGooglePlayServicesAvailable(this) == ConnectionResult.SUCCESS) {
             setUpMapIfNeeded();
         } else {
@@ -338,7 +385,7 @@ public class MainActivity extends FragmentActivity
     }
 
     public void addFenceActivity(View view) {
-        myLastLocation = mLocationClient.getLastLocation();
+        myLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
         Toast.makeText(this, "adding fence", Toast.LENGTH_LONG).show();
         startActivity(new Intent(this, AddFenceActivity.class));
 

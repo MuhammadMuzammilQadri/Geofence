@@ -47,6 +47,7 @@
 <receiver android:name=".MyReciever">
     <intent-filter>
         <action android:name="android.intent.action.BOOT_COMPLETED"></action>
+        <!--<action android:name="com.aol.android.geofence.ACTION_RECEIVE_GEOFENCE"></action>-->
     </intent-filter>
 </receiver>
 

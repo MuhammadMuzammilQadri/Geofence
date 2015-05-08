@@ -48,7 +48,7 @@ public class MyService extends Service {
 
         GeofencingEvent mGeoFencingEvent = GeofencingEvent.fromIntent(intent);
 
-        if (mGeoFencingEvent.hasError()) {
+        if (!mGeoFencingEvent.hasError()) {
             Log.v("Muzammil", "MS, Received start id " + startId + ": " + intent);
             // We want this service to continue running until it is explicitly
 

@@ -2,193 +2,165 @@
 <items version="2" >
 
     <item
-        jar="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\7.0.0\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="4c93d99d454c975536bbe3b42283eee847f03ea3">
-        <dex dex="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\pre-dexed\debug\classes-3e3850b44d259b99002590bc9e7ff3d34a748b9d.jar" />
-    </item>
-    <item
-        jar="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\7.0.0\classes.jar"
+        jar="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/7.0.0/classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="1c5a76debf0c2857ccad422c4a80ed785982f8df">
-        <dex dex="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\pre-dexed\debug\classes-1437a01de4aaeb6e537ee1f1c2546317f621fcc1.jar" />
+        <dex dex="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/pre-dexed/debug/classes-2769cddfbd074174bfc44abc67830e1fadbe64e3.jar" />
     </item>
     <item
-        jar="C:\Users\Muhammad Faizan Khan\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
-        <dex dex="D:\Android\Geofence\app\build\intermediates\pre-dexed\debug\support-annotations-22.0.0-8e28367814ff13a0ff859f1116a848ff69ec1f9d.jar" />
-    </item>
-    <item
-        jar="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\7.0.0\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="3c0b099f9de16b265ecd6122fcb603e7d0d29f90">
-        <dex dex="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\pre-dexed\debug\classes-e3dab190126b45fd4b725cf4160e1d3f495c3202.jar" />
-    </item>
-    <item
-        jar="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\7.0.0\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="ef5f051e7308febe289dc93c67c5f32785b4260a">
-        <dex dex="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\pre-dexed\debug\classes-8afc1263ac0fa0ca3e535d85557356e68e82cc1d.jar" />
-    </item>
-    <item
-        jar="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.0.0\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
-        <dex dex="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\pre-dexed\debug\classes-784c34517d52304aea107c45ccfb8b14d2556da7.jar" />
-    </item>
-    <item
-        jar="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\libs\internal_impl-22.0.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
-        <dex dex="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-3f1111aeb2c7056caf651babe9fd164d520ce00e.jar" />
-    </item>
-    <item
-        jar="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\7.0.0\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="a96b762bde4139de855735f175ec4d17dca55a6d">
-        <dex dex="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\pre-dexed\debug\classes-7c611b4844fbade6373e2bbdec536286b40cd480.jar" />
-    </item>
-    <item
-        jar="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\7.0.0\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="17f8750d5c0749e44dd7c54aa390d9c937803825">
-        <dex dex="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\pre-dexed\debug\classes-333f62e65c27bf73f69dbcbf15aac8d5b3e0cae3.jar" />
-    </item>
-    <item
-        jar="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\7.0.0\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="fb04b12526b0073c7fb1ebb70c5842d82ee95596">
-        <dex dex="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\pre-dexed\debug\classes-2a3f61238ef9404e65a386eb61a177b66d870c33.jar" />
-    </item>
-    <item
-        jar="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\7.0.0\classes.jar"
+        jar="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/7.0.0/classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="41b3870cbe5fa546d8095b5b89d42cb69f3dd175">
-        <dex dex="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\pre-dexed\debug\classes-c828d605a2da9929c0a735a53b41f76d660be0ab.jar" />
+        <dex dex="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/pre-dexed/debug/classes-1b87a09f35e334243c57a6908642996973d5f7f0.jar" />
     </item>
     <item
-        jar="D:\Android\Geofence\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
-        <dex dex="D:\Android\Geofence\app\build\intermediates\pre-dexed\debug\classes-ebd1bacae5b5950cbd00545d0cca341871fc0e94.jar" />
-    </item>
-    <item
-        jar="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\7.0.0\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="29fd6d3794b71491c2789708cd8d03c71feb8954">
-        <dex dex="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\pre-dexed\debug\classes-a0b70ed562df18f83e7b9904d30d8fa4f0234ba5.jar" />
-    </item>
-    <item
-        jar="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\7.0.0\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="c976518693e89ad44fbfccfc654941eaec198d08">
-        <dex dex="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\pre-dexed\debug\classes-4321321b77f4796738d667e1609583c22879691c.jar" />
-    </item>
-    <item
-        jar="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\7.0.0\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="9224bc4c54ba95147c7eabd874573763c07cb6be">
-        <dex dex="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\pre-dexed\debug\classes-c75a34a3c98d54f5b7b481485961138408e46e99.jar" />
-    </item>
-    <item
-        jar="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appstate\7.0.0\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="7ff613bf78ab057293892fdbd4169eda899c89b9">
-        <dex dex="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\pre-dexed\debug\classes-7558fac06dc87ecbf2b64ce53ec41d00b9586a63.jar" />
-    </item>
-    <item
-        jar="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
-        <dex dex="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\pre-dexed\debug\classes-86de7ceca35ccc662073e44509ccb03203d16c58.jar" />
-    </item>
-    <item
-        jar="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\7.0.0\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="0e8228b4bc69c6a2c8d7c18498a77e53417d2574">
-        <dex dex="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\pre-dexed\debug\classes-efbe41c03b60572c8b70715b94e33349bfe420b8.jar" />
-    </item>
-    <item
-        jar="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\7.0.0\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="73ccb92b70112f2e463e415ef8d7275de7da6516">
-        <dex dex="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\pre-dexed\debug\classes-cbf1433d645096d098068492dcba1c9751fa9165.jar" />
-    </item>
-    <item
-        jar="D:\Android\Geofence\app\build\intermediates\exploded-aar\com.google.android.gms\play-services\4.2.42\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="e5f81129dfb3d02df80126512bc98278ed2bb40a">
-        <dex dex="D:\Android\Geofence\app\build\intermediates\pre-dexed\debug\classes-8e2f667ed7f97ced4988874e9bef4440bcad3971.jar" />
-    </item>
-    <item
-        jar="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\7.0.0\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="e3d791b42eaa90416cd0b2d2e608092794a3baa4">
-        <dex dex="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\pre-dexed\debug\classes-1f73c6065fc552e493811f76c87dcac5370e6761.jar" />
-    </item>
-    <item
-        jar="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\7.0.0\classes.jar"
+        jar="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/7.0.0/classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="a08d65794b844d8e7540bf9a33859bf3b2482d7f">
-        <dex dex="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\pre-dexed\debug\classes-505de07dc2ac480ac1ad18753a2665272f778e66.jar" />
+        <dex dex="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/pre-dexed/debug/classes-7b4869f20bb2b0b91e83558fcbdf8c74ca4454aa.jar" />
     </item>
     <item
-        jar="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\7.0.0\classes.jar"
+        jar="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.0.0/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="3033cc3a2c68dff3e5b646d6d084bdbdf7d00b25">
-        <dex dex="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\pre-dexed\debug\classes-98a4854236f276b4418983564f6e27c03a02c4db.jar" />
+        sha1="4c93d99d454c975536bbe3b42283eee847f03ea3">
+        <dex dex="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/pre-dexed/debug/classes-dc66a5ba79b853dff9d73b51997ea7710227d361.jar" />
     </item>
     <item
-        jar="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\7.0.0\classes.jar"
+        jar="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/7.0.0/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="055783146ba9654a725442563be78cad303aad1f">
-        <dex dex="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\pre-dexed\debug\classes-f6c9891eb8c301e06ddb900661329a331072d027.jar" />
+        sha1="3c0b099f9de16b265ecd6122fcb603e7d0d29f90">
+        <dex dex="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/pre-dexed/debug/classes-94028a38d47e88e70f20163726f64b450676a9a3.jar" />
     </item>
     <item
-        jar="D:\Android\Geofence\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\libs\internal_impl-22.0.0.jar"
+        jar="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="fb04b12526b0073c7fb1ebb70c5842d82ee95596">
+        <dex dex="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/pre-dexed/debug/classes-78a10dee5fdf3ad003d44bcb79638c3add252c44.jar" />
+    </item>
+    <item
+        jar="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="29fd6d3794b71491c2789708cd8d03c71feb8954">
+        <dex dex="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/pre-dexed/debug/classes-7e5ee6b5c709f9ebffd9ac34a5239e8bf5dcb7fd.jar" />
+    </item>
+    <item
+        jar="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="17f8750d5c0749e44dd7c54aa390d9c937803825">
+        <dex dex="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/pre-dexed/debug/classes-2984cb03365d15cc8ddd31ea43010a2e30af73c1.jar" />
+    </item>
+    <item
+        jar="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="0e8228b4bc69c6a2c8d7c18498a77e53417d2574">
+        <dex dex="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/pre-dexed/debug/classes-2067480f3235a3ca57b68ce4cc0d3de8c9da3a34.jar" />
+    </item>
+    <item
+        jar="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/libs/internal_impl-22.0.0.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
-        <dex dex="D:\Android\Geofence\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-cf081a3ec7e3da2b6674b821b238ed8c488c663f.jar" />
+        <dex dex="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-3bffe034e6d9f862e922768dd6fd894ef137ab8d.jar" />
     </item>
     <item
-        jar="D:\Android\Geofence\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.0.0\classes.jar"
+        jar="/Users/panacloud/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/pre-dexed/debug/support-annotations-22.0.0-0c9f3292f87b4c0078f8a3de8101cd0df6bbd92a.jar" />
+    </item>
+    <item
+        jar="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e3d791b42eaa90416cd0b2d2e608092794a3baa4">
+        <dex dex="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/pre-dexed/debug/classes-6a3bc7f13dd94561399f0bb51e1f85059f07e50d.jar" />
+    </item>
+    <item
+        jar="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="3033cc3a2c68dff3e5b646d6d084bdbdf7d00b25">
+        <dex dex="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/pre-dexed/debug/classes-a6066b1dc642c1fd189e963df15c9e70c0a44275.jar" />
+    </item>
+    <item
+        jar="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="d84409890828e07d344a3b9b1da545dba9897b51">
-        <dex dex="D:\Android\Geofence\app\build\intermediates\pre-dexed\debug\classes-bf139d1adc656d02b70823eecbead6e6df9aae3b.jar" />
+        <dex dex="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/pre-dexed/debug/classes-6cabc27e67ec6d88e6289c796fd5fbc8983975b5.jar" />
     </item>
     <item
-        jar="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\7.0.0\classes.jar"
+        jar="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/pre-dexed/debug/classes-6dae718090919ef469098402b914165e9c9f08e7.jar" />
+    </item>
+    <item
+        jar="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="055783146ba9654a725442563be78cad303aad1f">
+        <dex dex="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/pre-dexed/debug/classes-7aa0c5241f0e1cf4977c28d3840d34f91877cf22.jar" />
+    </item>
+    <item
+        jar="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="73ccb92b70112f2e463e415ef8d7275de7da6516">
+        <dex dex="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/pre-dexed/debug/classes-4f8fbfd12c5dc3dddea4b63e7256163583a830e7.jar" />
+    </item>
+    <item
+        jar="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appstate/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="7ff613bf78ab057293892fdbd4169eda899c89b9">
+        <dex dex="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/pre-dexed/debug/classes-4a3bf8b1382a494c6394e2e0553f3f352aa0f4d7.jar" />
+    </item>
+    <item
+        jar="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="9224bc4c54ba95147c7eabd874573763c07cb6be">
+        <dex dex="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/pre-dexed/debug/classes-a2671861d851a0fe72d012a2dfa0a94048146d4b.jar" />
+    </item>
+    <item
+        jar="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a96b762bde4139de855735f175ec4d17dca55a6d">
+        <dex dex="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/pre-dexed/debug/classes-d7e00102199580764826ac5e69872e5af2fb1b62.jar" />
+    </item>
+    <item
+        jar="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ef5f051e7308febe289dc93c67c5f32785b4260a">
+        <dex dex="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/pre-dexed/debug/classes-3babe7aec1aa8d771b35998170fcd091d18eaca9.jar" />
+    </item>
+    <item
+        jar="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c976518693e89ad44fbfccfc654941eaec198d08">
+        <dex dex="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/pre-dexed/debug/classes-1b6868bf8b9be86bbfc5d7fe22416a4b5a60269e.jar" />
+    </item>
+    <item
+        jar="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/7.0.0/classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="4cd0b093824b3228fffc21ea369b98d0b1db6566">
-        <dex dex="D:\Android\GeoFenceWithGoogleAPIClient\app\build\intermediates\pre-dexed\debug\classes-af94d504d282db668a675ded64c192b49f46eed4.jar" />
+        <dex dex="/Users/panacloud/Desktop/SirZiaApp/Geofence/app/build/intermediates/pre-dexed/debug/classes-a3ac23a2880f474d7225815f512b130544769a4e.jar" />
     </item>
 
 </items>

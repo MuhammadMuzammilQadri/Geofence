@@ -1,32 +1,31 @@
+
+/**
+ * Aik new project banana hai..
+ * us main khali map view kr k dekhna hai..
+ * phir us main geofence service daal k dekhni hai..
+ * phir myservice daalni hai..
+ * or phir add fence activity se merge krna hai..
+ */
+
+
+
 /**
  * Created by Muhammad Muzammil on 25/4/2015.
  */
 package com.example.muhammadfaizankhan.geofence;
 
-import android.app.AlertDialog;
-import android.app.PendingIntent;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
-import android.view.View;
-import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
-//import com.google.android.gms.common.GooglePlayServicesClient;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.ResultCallback;
-import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.Geofence;
-//import com.google.android.gms.location.LocationClient;
 import com.google.android.gms.location.LocationListener;
-import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.location.LocationStatusCodes;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -35,6 +34,10 @@ import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.util.ArrayList;
+import java.util.Map;
+
+//import com.google.android.gms.common.GooglePlayServicesClient;
+//import com.google.android.gms.location.LocationClient;
 
 public class MainActivity extends FragmentActivity
         implements
@@ -66,16 +69,15 @@ public class MainActivity extends FragmentActivity
      */
 
 //  TODO  static LocationClient mLocationClient;
-            static GoogleApiClient mGoogleApiClient;
+
     static Location myLastLocation;
     static double myLastLocationRadius;
     static boolean isFenceAdded;
-    boolean isFirstTime=true;
     /**
      * Used to set the priority and intervals of the location requests.
      */
-    static LocationRequest mLocationRequest;
-    static ArrayList<Geofence> geofences = new ArrayList<Geofence>();
+//    static LocationRequest mLocationRequest;
+//    static ArrayList<Geofence> geofences = new ArrayList<Geofence>();
 
 
 
@@ -91,6 +93,7 @@ public class MainActivity extends FragmentActivity
         setContentView(R.layout.activity_main);
 
         Log.v("Muzammil", "MA, in onCreate..");
+        startService(new Intent(this, GeoFenceService.class));
 
 
         /**
@@ -102,27 +105,7 @@ public class MainActivity extends FragmentActivity
          */
 //        mLocationClient = new LocationClient(this, this, this);   TODO
 
-        mGoogleApiClient = new GoogleApiClient.Builder(this)
-                .addApi(LocationServices.API)
-                .addConnectionCallbacks(new GoogleApiClient.ConnectionCallbacks(){
-                    @Override
-                    public void onConnected(Bundle bundle) {
-                        functionForOnConnected(bundle);
-                    }
-
-                    @Override
-                    public void onConnectionSuspended(int i) {
-                        Log.v("Muzammil", "Connection to GoogleAPIClient failed!");
-                    }
-                })
-                .addOnConnectionFailedListener(new GoogleApiClient.OnConnectionFailedListener() {
-                    @Override
-                    public void onConnectionFailed(ConnectionResult connectionResult) {
-                        Log.v("Muzammil", "Connection to GoogleAPIClient failed!");
-
-                    }
-                })
-                .build();
+//      buildGoogleApiClient();
 
         /**
          * With the LocationRequest, we can set the quality of service. For example, the priority
@@ -131,103 +114,107 @@ public class MainActivity extends FragmentActivity
 
 
 
-        mLocationRequest = LocationRequest.create();
-        mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-        mLocationRequest.setInterval(3600000);
-        mLocationRequest.setFastestInterval(60000);
+//        mLocationRequest = LocationRequest.create();
+//        mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+//        mLocationRequest.setInterval(3600000);
+//        mLocationRequest.setFastestInterval(60000);
 
 
     }
 
-    public void functionForOnConnected(Bundle bundle) {
-
-        Log.v("Muzammil", "Connected to location services.");
-
-        Log.v("Muzammil", "Calling Service..");
-        PendingIntent pendingIntent = PendingIntent.getService(this, 0,
-                new Intent(this, MyService.class)
-                , PendingIntent.FLAG_UPDATE_CURRENT);
-        Log.v("Muzammil", "Service Called..");
-
-
-
-        if (isFirstTime) {
-            /**
-             * The addGeofences function requires that the Geofences be in a List, so there can be
-             * multiple geofences. For this example we will only need one.
-             */
-            mGeofence = new Geofence.Builder()
-                    .setRequestId("Default GeoFence")
-                            // There are three types of Transitions.
-                    .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_DWELL | Geofence.GEOFENCE_TRANSITION_ENTER | Geofence.GEOFENCE_TRANSITION_EXIT)
-                            // Set the geofence location and radius.
-                    .setCircularRegion(mGeofenceLatLng.latitude, mGeofenceLatLng.longitude, mRadius)
-                            // How long the geofence will remain in place.
-                    .setExpirationDuration(1000*60*7)
-                            // This is required if you specify GEOFENCE_TRANSITION_DWELL when setting the transition types.
-                    .setLoiteringDelay(DWELL_PERIOD)
-                    .build();
-
-            geofences.add(mGeofence);
-            isFirstTime=false;
+//    protected synchronized void buildGoogleApiClient(){
+//        mGoogleApiClient = new GoogleApiClient.Builder(this)
+//                .addApi(LocationServices.API)
+//                .addConnectionCallbacks(new GoogleApiClient.ConnectionCallbacks(){
+//                    @Override
+//                    public void onConnected(Bundle bundle) {
+//                        functionForOnConnected(bundle);
+//                    }
+//
+//                    @Override
+//                    public void onConnectionSuspended(int i) {
+//                        Log.v("Muzammil", "Connection to GoogleAPIClient failed!");
+//                    }
+//                })
+//                .addOnConnectionFailedListener(new GoogleApiClient.OnConnectionFailedListener() {
+//                    @Override
+//                    public void onConnectionFailed(ConnectionResult connectionResult) {
+//                        Log.v("Muzammil", "Connection to GoogleAPIClient failed!");
+//
+//                    }
+//                })
+//                .build();
+//    }
 
 
-        }
-
-        /**
-         * Adding the geofence to the ArrayList, which will be passed as the first parameter
-         * to the LocationClient object's addGeofences function.
-         */
-        if (isFenceAdded) {
-            geofences.add(mGeofence);
-
-            /**
-             * We're creating a PendingIntent that references the ReceiveTransitionsIntentService class
-             * in conjunction with the geofences.
-             */
-
-
-
-            /**
-             * We want this (MainActivity) to handle location updates.(see onLocationChanged function)
-             */
-            /**
-             * Adding the Geofences and PendingIntent to the LocationClient and setting this
-             * (MainActivity) to handle onAddGeofencesResult. The pending intent, which is the
-             * ReceiveTransitionsIntentService, is what gets utilized when one of the transitions
-             * that was specified in the geofence is fired.
-             */
-
-            //DEBUGGING - For checking geofence arraylist and object
-            for (int index = 0; index < geofences.size(); index++) {
-                String x = geofences.get(index).getRequestId();
-                Log.v("MainGeofenceIds", "" + x);
-            }
-
-
-//            mLocationClient.addGeofences(geofences, pendingIntent, this); TODO
-
-            //TODO
-            //We can also call just an await() function instead of setResultCallback()..
-
-            isFenceAdded=false;
-
-        }
-
-        LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);
-        LocationServices.GeofencingApi.addGeofences(mGoogleApiClient, geofences, pendingIntent)
-                .setResultCallback(new ResultCallback<Status>() {
-                    @Override
-                    public void onResult(Status status) {
-                        Log.v("Muzammil","addGeofences ResultCallBack"+status.getStatusMessage());
-                    }
-                });
-
-        Log.v("GeofenceIds Size: ", "" + geofences.size());
-//        Log.v("GEOFENCE", MainActivity.mGeofence.toString());
-
-
-    }
+//    public void functionForOnConnected(Bundle bundle) {
+//
+//        Log.v("Muzammil", "Connected to location services.");
+//
+//        Log.v("Muzammil", "Calling Service..");
+//        PendingIntent pendingIntent = PendingIntent.getService(this, 0,
+//                new Intent(this, MyService.class)
+//                , PendingIntent.FLAG_UPDATE_CURRENT);
+//        Log.v("Muzammil", "Service Called..");
+//
+//
+//        /**
+//         * Adding the geofence to the ArrayList, which will be passed as the first parameter
+//         * to the LocationClient object's addGeofences function.
+//         */
+//        if (isFenceAdded) {
+//            geofences.add(mGeofence);
+//
+//            /**
+//             * We're creating a PendingIntent that references the ReceiveTransitionsIntentService class
+//             * in conjunction with the geofences.
+//             */
+//
+//
+//
+//            /**
+//             * We want this (MainActivity) to handle location updates.(see onLocationChanged function)
+//             */
+//            /**
+//             * Adding the Geofences and PendingIntent to the LocationClient and setting this
+//             * (MainActivity) to handle onAddGeofencesResult. The pending intent, which is the
+//             * ReceiveTransitionsIntentService, is what gets utilized when one of the transitions
+//             * that was specified in the geofence is fired.
+//             */
+//
+//            //DEBUGGING - For checking geofence arraylist and object
+//            for (int index = 0; index < geofences.size(); index++) {
+//                String x = geofences.get(index).getRequestId();
+//                Log.v("MainGeofenceIds", "" + x);
+//            }
+//
+//
+////            mLocationClient.addGeofences(geofences, pendingIntent, this); TODO
+//
+//            //TODO
+//            //We can also call just an await() function instead of setResultCallback()..
+//
+//            isFenceAdded=false;
+//
+//        }
+//
+//        LocationServices.FusedLocationApi.requestLocationUpdates
+//                (mGoogleApiClient, mLocationRequest, this);
+//
+//        LocationServices.GeofencingApi.addGeofences
+//                (mGoogleApiClient, geofences, pendingIntent)
+//                .setResultCallback(new ResultCallback<Status>() {
+//                    @Override
+//                    public void onResult(Status status) {
+//                        Log.v("Muzammil","addGeofences ResultCallBack"+status.getStatusMessage());
+//                    }
+//                });
+//
+//        Log.v("GeofenceIds Size: ", "" + geofences.size());
+////        Log.v("GEOFENCE", MainActivity.mGeofence.toString());
+//
+//
+//    }
 
 //
 //    @Override
@@ -340,56 +327,80 @@ public class MainActivity extends FragmentActivity
         // show the floor picker.
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
                 new LatLng(mGeofenceLatLng.latitude, mGeofenceLatLng.longitude), 18));
+
+        //TODO - I have to set lat and long of the current location..
+
         // Hide labels.
         mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
         mMap.setIndoorEnabled(false);
         mMap.setMyLocationEnabled(true);
 
-        // Adding visuals.
-        if (myLastLocation == null) {
+        ArrayList<Double> myLatitudes, myLongitudes;
+        myLatitudes= new ArrayList<Double>();
+        myLongitudes= new ArrayList<Double>();
+
+
+        for (Map.Entry<String, LatLng> entry : Constants.HARD_CODED_FENCES.entrySet()) {
+            myLatitudes.add(entry.getValue().latitude);
+            myLongitudes.add(entry.getValue().longitude);
+
+
             mCircleOptions = new CircleOptions()
-                    .center(mGeofenceLatLng)
-                    .radius(mRadius)
+                    .center(new LatLng(entry.getValue().latitude, entry.getValue().longitude))
+                    .radius(90)
                     .fillColor(0x40ff0000)
                     .strokeColor(Color.TRANSPARENT)
                     .strokeWidth(2);
-            Log.v(TAG, "myLastLcoation == null.");
 
-        } else {
-            mCircleOptions = new CircleOptions()
-                    .center(new LatLng(myLastLocation.getLatitude(), myLastLocation.getLongitude()))
-                    .radius(myLastLocationRadius)
-                    .fillColor(0x40ff0000)
-                    .strokeColor(Color.TRANSPARENT)
-                    .strokeWidth(2);
-            Log.v(TAG, "myLastLcoation != null.");
-
+            mCircle = mMap.addCircle(mCircleOptions);
         }
 
-        mCircle = mMap.addCircle(mCircleOptions);
+
+        // Adding visuals.
+//        if (myLastLocation == null) {
+//            mCircleOptions = new CircleOptions()
+//                    .center(mGeofenceLatLng)
+//                    .radius(mRadius)
+//                    .fillColor(0x40ff0000)
+//                    .strokeColor(Color.TRANSPARENT)
+//                    .strokeWidth(2);
+//            Log.v(TAG, "myLastLcoation == null.");
+//
+//        } else {
+//            mCircleOptions = new CircleOptions()
+//                    .center(new LatLng(myLastLocation.getLatitude(), myLastLocation.getLongitude()))
+//                    .radius(myLastLocationRadius)
+//                    .fillColor(0x40ff0000)
+//                    .strokeColor(Color.TRANSPARENT)
+//                    .strokeWidth(2);
+//            Log.v(TAG, "myLastLcoation != null.");
+//
+//        }
+//        mCircle = mMap.addCircle(mCircleOptions);
+
     }
 
-
-    @Override
-    public void onBackPressed() {
-        new AlertDialog.Builder(this)
-                .setTitle("Confirm Exit?")
-                .setMessage("Are you sure you want to exit?")
-                .setNegativeButton(android.R.string.no, null)
-                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-
-                    public void onClick(DialogInterface arg0, int arg1) {
-                        MainActivity.super.onBackPressed();
-                    }
-                }).create().show();
-    }
-
-    public void addFenceActivity(View view) {
-        myLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
-        Toast.makeText(this, "adding fence", Toast.LENGTH_LONG).show();
-        startActivity(new Intent(this, AddFenceActivity.class));
-
-    }
+//
+//    @Override
+//    public void onBackPressed() {
+//        new AlertDialog.Builder(this)
+//                .setTitle("Confirm Exit?")
+//                .setMessage("Are you sure you want to exit?")
+//                .setNegativeButton(android.R.string.no, null)
+//                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+//
+//                    public void onClick(DialogInterface arg0, int arg1) {
+//                        MainActivity.super.onBackPressed();
+//                    }
+//                }).create().show();
+//    }
+//
+//    public void addFenceActivity(View view) {
+//        myLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
+//        Toast.makeText(this, "adding fence", Toast.LENGTH_LONG).show();
+//        startActivity(new Intent(this, AddFenceActivity.class));
+//
+//    }
 
 
 }

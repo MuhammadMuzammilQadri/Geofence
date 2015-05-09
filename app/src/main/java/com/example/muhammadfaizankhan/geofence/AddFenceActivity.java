@@ -81,7 +81,7 @@ public class AddFenceActivity extends Activity {
                         // Set the geofence location and radius.
                 .setCircularRegion(MainActivity.myLastLocation.getLatitude(), MainActivity.myLastLocation.getLongitude(), radius)
                         // How long the geofence will remain in place.
-                .setExpirationDuration(1000*60*5)
+                .setExpirationDuration(1000*60*7)
                         // This is required if you specify GEOFENCE_TRANSITION_DWELL when setting the transition types.
                 .setLoiteringDelay(MainActivity.DWELL_PERIOD)
                 .build();

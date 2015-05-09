@@ -15,9 +15,9 @@ import android.support.v4.app.TaskStackBuilder;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
-
+import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.Geofence;
-import com.google.android.gms.location.LocationClient;
+import com.google.android.gms.location.GeofencingEvent;
 
 import java.util.List;
 
@@ -44,8 +44,11 @@ public class MyService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
+        Log.v("Muzammil", "MS, onStartCommand..");
 
-        if (!LocationClient.hasError(intent)) {
+        GeofencingEvent mGeoFencingEvent = GeofencingEvent.fromIntent(intent);
+
+        if (!mGeoFencingEvent.hasError()) {
             Log.v("Muzammil", "MS, Received start id " + startId + ": " + intent);
             // We want this service to continue running until it is explicitly
 
@@ -53,12 +56,12 @@ public class MyService extends Service {
 
             Toast.makeText(this, "MS, Transition occur..", Toast.LENGTH_LONG).show();
 
-            int transition = LocationClient.getGeofenceTransition(intent);
+            int transition = mGeoFencingEvent.getGeofenceTransition();
             Log.v("Muzammil", "MS, Transition Occur: "+ transition);
 
 
             // Post a notification
-            List<Geofence> geofences = LocationClient.getTriggeringGeofences(intent);
+            List<Geofence> geofences = mGeoFencingEvent.getTriggeringGeofences();
             String[] geofenceIds = new String[geofences.size()];
 
             Log.v("Muzammil", "MS, GeofenceIds Size: " + geofences.size());
@@ -72,7 +75,7 @@ public class MyService extends Service {
 
             sendNotification(transitionType, ids);
         } else {
-            Log.e("Muzammil", "Error: "+String.valueOf(LocationClient.getErrorCode(intent)));
+            Log.e("Muzammil", "Error: "+String.valueOf(mGeoFencingEvent.getErrorCode()));
         }
         // stopped, so return sticky.
 
@@ -82,8 +85,9 @@ public class MyService extends Service {
 
     @Override
     public void onDestroy() {
+
         // Cancel the persistent notification.
-//        mNM.cancel(NOTIFICATION);
+        // mNM.cancel(NOTIFICATION);
 
         // Tell the user we stopped.
 //        Toast.makeText(this, R.string.local_service_stopped, Toast.LENGTH_SHORT).show();
